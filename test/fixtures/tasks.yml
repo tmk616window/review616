@@ -1,0 +1,49 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_id: 1
+  task_user_email: MyString
+  design: MyText
+  design_point: 1
+  function: MyText
+  function_point: 1
+  plan: MyText
+  plam_point: 1
+  unique: MyText
+  unique_point: 1
+  user_perspective: MyText
+  user_perspective_point: 1
+  recruit: MyString
+  field: MyString
+  task_old: 1
+  task_pl: MyString
+  task_tool: MyString
+  github_url: MyString
+  work_explain: MyText
+  study_period: 1
+  company_info: MyString
+  task_coment: MyText
+
+two:
+  task_id: 1
+  task_user_email: MyString
+  design: MyText
+  design_point: 1
+  function: MyText
+  function_point: 1
+  plan: MyText
+  plam_point: 1
+  unique: MyText
+  unique_point: 1
+  user_perspective: MyText
+  user_perspective_point: 1
+  recruit: MyString
+  field: MyString
+  task_old: 1
+  task_pl: MyString
+  task_tool: MyString
+  github_url: MyString
+  work_explain: MyText
+  study_period: 1
+  company_info: MyString
+  task_coment: MyText
