@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Review1</title>
+    <title>Review</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <div class='container tasks_home'>
+      <div class='row justify-content-between'>
+        <div class='tasks_home_tab'>
+          <h1><%=link_to 'Enjob', root_path ,class:'tasks_home_button'%></h1>
+        </div>
+        <div class='tasks_sub_tab'>
+
+            <%= link_to 'サインアップ', '#',class:'tasks_sub_button' %>
+            <%= link_to 'ログイン', '#',class:'tasks_sub_button' %>
+
+          
+          
+        </div>
+      </div>
+      
+    </div>
+  </header>
+  
+  
+      <div class="flash time-limit">
+
+      <% flash.each do |message_type, message|%>
+          <div class= "alert alert-<%=message_type%>"><%=message%></div>
+      <%end%>
+    </div>  
+
+  
   <body>
+
+    
     <%= yield %>
   </body>
 </html>
+
+
