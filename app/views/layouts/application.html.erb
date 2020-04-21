@@ -15,9 +15,17 @@
           <h1><%=link_to 'Enjob', root_path ,class:'tasks_home_button'%></h1>
         </div>
         <div class='tasks_sub_tab'>
+
+          <% if user_signed_in? %>
+            <strong><%= link_to current_user.email, user_pages_path(current_user.id) ,class:'tasks_sub_button' %></strong>
+            <%= link_to 'ポートフォリオ一覧', tasks_path,class:'tasks_sub_button' %>
             <%= link_to 'ポートフォリオ投稿', new_task_path,class:'tasks_sub_button' %>
-            <%= link_to 'サインアップ', '#',class:'tasks_sub_button' %>
-            <%= link_to 'ログイン', '#',class:'tasks_sub_button' %>
+            <%= link_to '登録変更', edit_user_registration_path,class:'tasks_sub_button' %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class:'tasks_sub_button' %>
+          <% else %>
+            <%= link_to 'サインアップ', new_user_registration_path,class:'tasks_sub_button' %>
+            <%= link_to 'ログイン', new_user_session_path,class:'tasks_sub_button' %>
+          <% end %>
 
           
           
