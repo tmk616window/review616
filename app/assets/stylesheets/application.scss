@@ -14,4 +14,155 @@
  *= require_self
  */
 
+
 @import "bootstrap";
+
+header{
+    background-color:#00CCFF;
+    padding-bottom:10px;
+}
+
+.tasks_home{
+    padding-top:10px;
+}
+
+.tasks_home_button{
+    color:white;
+}
+
+.tasks_home_tab{
+    margin-top:10px;
+}
+
+.tasks_home_button:hover{
+    color:white;
+    text-decoration:none;
+}
+
+.tasks_sub_button{
+    margin-right:20px;
+    margin-top:10px;
+    color:white;
+    
+}
+
+.tasks_sub_tab{
+    margin-top:30px;
+}
+
+.tasks_sub_button:hover{
+    color:white;
+    text-decoration:none;
+}
+
+.tasks_index_seach{
+    border:solid 1px black;
+    width:200px;
+    height:400px;
+}
+
+.task_index{
+    margin-bottom:70px;
+}
+
+.tasks_index{
+    border:solid 1px black;
+    width:650px;
+    padding: 10px 10px 10px 10px;
+    margin-top:50px;
+}
+
+.tasks_index_form{
+    margin-top:10px;
+}
+
+.tasks_index_image{
+    float:left;
+    border: solid 1px black;
+    width: 307px;
+    height:170px;
+    margin-right:30px;
+}
+
+
+.tasks_index{
+    position: relative;
+}
+
+.tasks_index a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+}
+
+.show_tasks{
+    padding:20px 20px 20px 20px;
+    border: solid 1px black;
+    margin-bottom:60px;
+}
+
+.show_tasks_edit_button{
+}
+
+.show_tasks_like{
+    float:right;
+}
+
+
+.show_tasks_chart{
+    max-width:80%;
+    height: 500px;
+    border: solid 1px black;
+    margin: auto;
+    margin-top:50px;
+}
+
+.show_tasks_like_button{
+    display:inline;
+}
+
+.show_tasks_like_count{
+    display:inline;
+}
+
+.show_tasks_table{
+    padding-right:40px;
+    padding-left:40px;
+}
+
+.show_tasks_table table {
+    margin-top:50px;
+    border-collapse:  collapse; 
+    width:  100%;               
+}
+ 
+.show_tasks_table th {
+    width:  100px;              
+    text-align: left;
+    background-color:#EEEEEE;
+    border: solid 1px;         
+
+}
+ 
+ 
+.show_tasks_table td {
+    text-align: left;
+    border: solid 1px;         
+}
+
+.show_tasks_user{
+    margin-top:40px;
+}
+
+.show_tasks_coment{
+    margin-top: 40px;
+    background-color:#FFFFCC;
+    padding:10px 10px 100px 10px;
+}
+
+.message_show_apply_button{
+    margin-top:20px;
+}
+
