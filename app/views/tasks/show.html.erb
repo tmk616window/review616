@@ -1,0 +1,100 @@
+<div class='container'>
+    <div class='show_tasks'>
+        <div class='show_tasks_button'>
+            
+        <p>ユーザー：<%=link_to @task.task_user_email , '#'%></p>
+        <%=link_to '編集', edit_task_path(@task) , class:'btn btn-primary show_tasks_edit_button'%>
+        <%=link_to '消去' , "/tasks/#{@task.id}", method: :delete, class:'btn btn-danger'%>
+        </div>
+        <div class='show_tasks_chart'>
+　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<canvas id="chart<%=@task.id%>"></canvas>
+
+  <script>
+    var ctx = document.getElementById("chart<%=@task.id%>");
+    var myRadarChart = new Chart(ctx, {
+        type: 'radar', 
+        data: { 
+            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
+            datasets: [{
+			    label: "ポートフォリオ分析",
+                data: [<%=@task.design_point%>, <%=@task.function_point%>, <%=@task.plam_point%>, <%=@task.unique_point%>, <%=@task.user_perspective_point%>],
+                backgroundColor: 'rgba(255,0,0,0.5)',
+                borderColor: 'RGBA(225,95,150, 1)',
+                borderWidth: 1,
+            }, ]
+        },
+        options: {
+            scale:{
+                ticks:{
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    stepSize: 1,
+                }
+            }    
+        }
+    });
+  </script>
+        </div>
+
+        <div class='show_tasks_coment'>
+            <h5>コメント</h5>
+            <%=@task.task_coment%>
+        </div>
+        
+
+        <div class='show_tasks_user'>
+            <h2>ユーザー情報</h2><%=link_to @task.task_user_email , '#'%>
+<div class='show_tasks_table'>
+    
+<table>
+    <tbody>
+        <tr>
+            <th>採用方式</th>
+            <td><%=@task.recruit%></td>
+        </tr>
+        <tr>
+            <th>企業情報</th>
+            <td><%=@task.company_info%></td>
+        </tr>
+        
+        <tr>
+            <th>分野</th>
+            <td><%=@task.field%></td>
+            
+        </tr>
+        
+         <tr>
+            <th>年齢</th>
+            <td><%=@task.task_old%>歳</td>
+        </tr>
+         <tr>
+            <th>開発言語</th>
+            <td><%=@task.task_pl%></td>
+        </tr>
+        <tr>
+            <th>開発ツール</th>
+            <td><%=@task.task_tool%></td>
+        </tr>
+        <tr>
+            <th>github url</th>
+            <td><%=@task.github_url%></td>
+        </tr>
+        <tr>
+            <th>作品概要</th>
+            <td><%=@task.work_explain%></td>
+            
+        </tr>
+        <tr>
+            <th>勉強期間</th>
+            <td><%=@task.study_period%>ヶ月</td>
+            
+        </tr>
+
+    </tbody>
+</table>
+</div>            
+                
+        </div>
+    </div>
+</div>

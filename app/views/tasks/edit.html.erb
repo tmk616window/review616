@@ -15,18 +15,8 @@
 <%= f.select :user_perspective_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
 <br><br>
 <h2>ポートフォリオ項目別説明</h2>
-<p>デザイン</p>
-<%=f.text_area :design%>
-<p>機能</p>
-<%=f.text_area :function%>
-<p>企画力</p>
-<%=f.text_area :plan%>
-<p>ユニーク性</p>
-<%=f.text_area :unique%>
-<p>ユーザー視点</p>
-<%=f.text_area :user_perspective%>
-
-<h2>ユーザー視点</h2>
+<h3>コメント</h3>
+<%=f.text_area :task_coment%>
 
 <p>企業情報</p>
 <p>採用方式</p>
@@ -47,8 +37,6 @@
 <%=f.text_field :work_explain%>
 <p>勉強時間</p>
 <%=f.number_field :study_period%>ヶ月
-<h3>コメント</h3>
-<%=f.text_area :task_coment%>
 <br><br><br>
 <%=f.submit%>
 <%end%>
