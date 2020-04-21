@@ -1,2 +1,55 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h1>ポートフォリオ分析(5点満点)</h1>
+<%=form_with model: @task do |f|%>
+<%= f.hidden_field :task_id, value: '0'%>
+<%= f.hidden_field :task_user_email, value: 'email' %>
+<br><br><br>
+デザイン
+<%= f.select :design_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+機能
+<%= f.select :function_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+企画力
+<%= f.select :plam_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+ユニーク性
+<%= f.select :unique_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+ユーザー視点
+<%= f.select :user_perspective_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+<br><br>
+<h2>ポートフォリオ項目別説明</h2>
+<p>デザイン</p>
+<%=f.text_area :design%>
+<p>機能</p>
+<%=f.text_area :function%>
+<p>企画力</p>
+<%=f.text_area :plan%>
+<p>ユニーク性</p>
+<%=f.text_area :unique%>
+<p>ユーザー視点</p>
+<%=f.text_area :user_perspective%>
+
+<h2>ユーザー視点</h2>
+
+<p>企業情報</p>
+<p>採用方式</p>
+<%= f.select :recruit, [['新卒', '新卒'], ['中途', '中途'], ['インターン', 'インターン']] %>
+<p>企業情報</p>
+<%= f.select :company_info, [['自社開発', '自社開発'], ['受託開発', '受託開発'], ['SES', 'SES']] %>
+<p>分野</p>
+<%=f.text_field :field%>
+<p>年齢</p>
+<%=f.number_field :task_old%>
+<p>開発言語</p>
+<%=f.text_field :task_pl%>
+<p>開発ツール</p>
+<%=f.text_field :task_tool%>
+<p>github_url</p>
+<%=f.text_field :github_url%>
+<p>作品概要</p>
+<%=f.text_field :work_explain%>
+<p>勉強時間</p>
+<%=f.number_field :study_period%>ヶ月
+<h3>コメント</h3>
+<%=f.text_area :task_coment%>
+<br><br><br>
+<%=f.submit%>
+<%end%>
+
