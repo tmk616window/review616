@@ -9,7 +9,11 @@ class TasksController < ApplicationController
   end
 
   def show
+    @user = User.all
     @task = Task.find(params[:id])
+    @like = Like.new
+    @likes = Like.where(task_id: params[:id])
+    @like_user = @likes.find_by(user_id: current_user.id)
   end
   
   def destroy
