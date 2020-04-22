@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'messages/index'
-  get 'messages/show'
-  get 'messages/new'
-  get 'messages/edit'
   get 'index/show'
   get 'index/new'
   get 'index/edit'
@@ -13,5 +8,6 @@ Rails.application.routes.draw do
   resources :'likes'
   resources :'follows'
   resources :'users'
+  resources :'messages'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
