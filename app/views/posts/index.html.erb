@@ -1,0 +1,22 @@
+<h1>メッセージ一覧</h1>
+
+<h2>※イベント申し込みのメッセージが届きます</h2>
+
+<table class="table topic container">
+    <thead>
+        <tr>
+            <th>名前</th>
+            <th>受信時間</th>
+            <th>消去</th>
+        </tr>
+    </thead>
+    <tbody>
+    <%@posts.each do |p|%>
+        <tr>
+            <td><a href="/explain/<%=p.id%>"><%=p.post_name%></a></td>
+            <td><%=p.created_at.strftime("%Y-%m-%d %H:%M")%></td>
+            <td><%=link_to "消去", post_path(p.id),method: :delete,class:'btn btn-danger',data: {confirm: "メッセージを消去しますか？"}%></td>
+        </tr>
+        <%end%>
+    </tbody>
+</table>

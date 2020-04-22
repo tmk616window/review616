@@ -1,0 +1,30 @@
+<div>
+<div class='container'>
+    <div class='row justify-content-center'>
+        <div class='col-5 apply_form'>
+<h1>申し込み</h1>
+<%=form_with model: @post do |f|%>
+<%= f.hidden_field :post_id, value: @message.message_id %>
+<%= f.hidden_field :post_email, value: current_user.email %>
+<p>名前</p>
+<%=f.text_field:post_name,class:'form-control'%>
+
+<p >年齢</p>
+<%= f.number_field:post_old,min:10,max:100%>
+<p >職業</p>
+<%= f.text_field:post_job,class:'form-control'%>
+<P>性別</P>
+<%=f.radio_button :post_sex, :'男性' %>
+<%=f.label :post_sex, "男性", {value: :'男性', style: "display: inline-block;"} %>
+<%=f.radio_button :post_sex, :'女性' %>
+<%=f.label :post_sex, "女性", {value: :'女性', style: "display: inline-block;"} %>
+<p>コメント</p>
+<%=f.text_area:post_content,class:'form-control'%><br>
+<%=f.submit 'メッセージを送る' ,class:'form-control btn btn-primary'%>
+<%end%>    
+            
+        </div>
+    </div>
+</div>
+    
+</div>
