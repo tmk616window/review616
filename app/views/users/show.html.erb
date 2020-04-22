@@ -1,0 +1,62 @@
+<h1>プロフィール</h1> 
+<% if current_user.id == @user.id%>
+<%=link_to '編集' , edit_user_path(@user) ,class:'btn btn-primary'%>
+<%else%>
+<p></p>
+<%end%>
+
+
+
+
+<div class='show_detail_profile'>
+
+<P>名前</P>
+<%=@user.name%>
+<P>年齢</P>  
+<%=@user.old%>歳
+<P>職歴</P>
+<%=@user.programing_language%>
+<P>開発言語</P>
+<%=@user.job_past%>
+<P>コメント</P>  
+<%=@user.coment%>
+<P></P>    
+<P></P>    
+<P></P>    
+
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class='shwow_detail_follow'>
+
+        <% if current_user.id != @user.id%>
+        <%if !!@follow_user.nil?%>
+            <%=form_with model: @follow do |f|%>
+            <%= f.hidden_field :follow_user_email, value: @user.email %>
+            <%= f.hidden_field :user_id, value: @user.id %>
+            <%= f.hidden_field :follower_id, value: current_user.id %>
+            <%=f.submit 'フォロー',class:'btn btn-primary'%>
+            <%end%>
+        <%else%>
+        <div class='like_button_destroy'>
+            <%=link_to 'フォロー解除' , "/follows/#{@follow_user.id}", method: :delete, class:'btn btn-primary'%>
+        </div>
+        <%end%>
+        <%else%>
+        <p></p>
+        <%end%>
+
+    
+</div>                        
+<p>フォローユーザー</p> 
+<%@follow_current_user.each do |f|%>
+<p><%=link_to f.follow_user_email , user_path(f.user_id)%></p>
+<%end%>
+

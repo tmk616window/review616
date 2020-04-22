@@ -1,0 +1,15 @@
+<h1>プロフィール</h1>
+
+<%=form_with model: @user do |f|%>
+<p>名前</p>
+<%=f.text_field:name%>
+<p>年齢</p>
+<%=f.number_field:old%>
+<p>職歴</p>
+<%=f.text_field:job_past%>
+<p>開発言語</p>
+<%=f.text_field:programing_language%>
+<p>コメント</p>
+<%=f.text_area:coment%>
+<%=f.submit%>
+<%end%>
