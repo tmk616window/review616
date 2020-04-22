@@ -25,7 +25,7 @@
         </div>
 
             
-        <p>ユーザー：<%=link_to @task.task_user_email , '#'%></p>
+        <p>ユーザー：<%=link_to @task.task_user_email , user_path(@task.task_id)%></p>
         <%=link_to '編集', edit_task_path(@task) , class:'btn btn-primary show_tasks_edit_button'%>
         <%=link_to '消去' , "/tasks/#{@task.id}", method: :delete, class:'btn btn-danger'%>
         </div>
@@ -67,7 +67,7 @@
         
 
         <div class='show_tasks_user'>
-            <h2>ユーザー情報</h2><%=link_to @task.task_user_email , '#'%>
+            <h2>ユーザー情報</h2><%=link_to @task.task_user_email , user_path(@task.task_id)%>
 <div class='show_tasks_table'>
     
 <table>
